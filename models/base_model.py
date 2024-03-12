@@ -3,7 +3,6 @@
 """
 this files defines the BaseModel class that serve as base class in this project.
 """
-import models
 from datetime import datetime
 from uuid import uuid4
 
