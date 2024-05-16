@@ -6,7 +6,3 @@ The console is a command line interpreter that allows users to interact with dat
 ## How to use it
 
 ## Examples
-
-## Authors
-Geoffrey
-Donnelly
