@@ -1,10 +1,15 @@
-#!/usr/bin/python3
-from models.base_model import BaseModel
+#!/usr/bin/env python3
+"""
+model-user
+"""
+
+from model.base_model import BaseModel
+
 class User(BaseModel):
     """
-    represents a user with email, password, first name, and last name
+    Different attributes of user
     """
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    email = ' '
+    password = ' '
+    first_name = ' '
+    last_name = ' '

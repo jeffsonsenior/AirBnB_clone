@@ -1,7 +1,15 @@
-#!/usr/bin/python3
-from models.base_model import BaseModel
+#!/usr/bin/env python3
+"""
+medel- state
+"""
+from model.base_model import BaseModel
+
 class State(BaseModel):
     """
-    Represents a state with a name
+    class containing of state
     """
-    name: str = ""
+    name = ""
+
+    def __init__(self, *args, **kwargs):
+        """super class with args"""
+        super().__init__(**kwargs)
