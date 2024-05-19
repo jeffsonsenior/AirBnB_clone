@@ -16,12 +16,11 @@ class BaseModel:
         initializing the base model variables:
         uuid4, dates when the class is created or updated.
         """
-        date_format = '%Y-%m-%dT%H:%M:%S.%f'
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     setattr(self, key, datetime.datetime.strptime(
-                                                 value, date_format))
+                        ivalue, '%Y-%m-%dT%H:%M:%S.%f'))
                 elif key != "__class__":
                      setattr(self, key, value)
         else:
