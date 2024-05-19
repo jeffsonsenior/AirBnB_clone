@@ -1,17 +1,34 @@
-#!/usr/bin/env bash
+#!/usr/bin/python3
 import cmd
-import json
-import os
 from datetime import datetime
+from typing import Any
+from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from model.state import State
+from model.user import User
+from models import Storage
+from typing import Any
 
 class HBNBCommand(cmd.Cmd):
     """
     Command interpreter
     """
     prompt = "(hbnb)"
-    file_path = "file.json"
+    intro = "this is a ComandLine interpreter for AirBnB project"
 
-    def do_quit(self, arg):
+    __classes = {"BaseModel": BaseModel,
+                 "User": User,
+                 "State": State,
+                 "City": City,
+                 "Amenity": Amenity,
+                 "Place": Place,
+                 "Review": Review}
+    __cli_kwargs = {}
+        
+        def do_quit(self, arg):
         """
         Exit the program
         """
@@ -32,25 +49,19 @@ class HBNBCommand(cmd.Cmd):
         pass
     def do_create(self, arg):
         """
-        Create a new instance of BaseModel
+        Create a new instance of entered class
+        class name as argument then print id
         """
-        if not arg:
+        if arg ==""
             print("** class name missing **")
-            return
-        try:
-            """
-            create instance of specified class
-            """
-            class_name = arg
-            module_name = class_name.lower()
-            modeule = __import__(module_name)
-            cls = getattr(module,class_name)
-            instance = cls()
-            instance.save()
-            print(instance.id)
-        except (AttributeError, ImportError):
-            print("** class doesn't exist **")
-    def do_show(self, arg):
+        elif arg not in self.__classes.keys():
+            print("class doesn't exist**"
+        else:
+            for k, v, in self.__classes.items():
+                if arg == k:
+                    print(v(self.__cli_kwargs).id)
+
+def do_show(self, arg):
         """
         Print the string representation of an instance
         """
