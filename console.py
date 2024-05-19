@@ -3,6 +3,7 @@ import cmd
 import json
 import os
 from datetime import datetime
+
 class HBNBCommand(cmd.Cmd):
     """
     Command interpreter
