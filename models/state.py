@@ -13,4 +13,3 @@ class State(BaseModel):
     def __init__(self, *args, **kwargs):
         """super class with args"""
         super().__init__(**kwargs)
-

@@ -14,4 +14,3 @@ class City(BaseModel):
     def __init__(self, *args, **kwargs):
         """Super class with args"""
         super().__init__(**kwargs)
-

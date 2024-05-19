@@ -14,5 +14,4 @@ class Amenity(BaseModel):
         """
         calling super class with args
         """
-        super().__init__(**kwargs) 
-
+        super().__init__(**kwargs)
