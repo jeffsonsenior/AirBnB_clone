@@ -16,25 +16,25 @@ class BaseModel:
         initializing the base model variables:
         uuid4, dates when the class is created or updated.
         """
-        if kwargs:
-            for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":
-                    setattr(self, key, datetime.datetime.strptime(
-                        ivalue, '%Y-%m-%dT%H:%M:%S.%f'))
-                elif key != "__class__":
-                     setattr(self, key, value)
+        tform = "%Y-%m-%dT%H:%M:%S.%f"
+        self.id = str(uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
+        if len(kwargs.items():
+            for k, v in kwargs.items():
+                if k == "created_at" or k == " updated_at":
+                    self.__dict__[k] = datetime.strtime(v, tform)
+                else:
+                    self.__dict__[k] = v
         else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
-            models.storage.new(self)
-
+            models.storage.now(self)
 
     def __str__(self):
         """
         fuction _str_ to return the class name i.d and dictionary
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        clname = self.__class__.__name__
+        return "[{}] ({}) {}".format(clname, self.id, self.__dict___)
 
     def save(self):
         """
@@ -43,9 +43,8 @@ class BaseModel:
         save() function to keep update at time
         and serialize file
         """
-
-        self.update_at = datetime.now()
-        model.storage.save()
+        self.update_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """
@@ -53,8 +52,8 @@ class BaseModel:
         to return created dictionary with 
         string format ot times
         """
-        dict_obj = self.__dict__.copy()
-        dict_obj["created_at"] = self.created_at.isoformat()
-        dict_obj["updated_at"] = self.updated_at.isoformat()
-        dict_obj["__class__"] = self.__class__.__name__
-        return dict_obj
+        rdict = self.__dict__.copy()
+        rdict["created_at"] = self.created_at.isoformat()
+        rdict["updated_at"] = self.updated_at.isoformat()
+        rdict["__class__"] = self.__class__.__name__
+        return rdict

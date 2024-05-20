@@ -53,7 +53,7 @@ class FileStorage:
         """
 
         try:
-            with open(FileStorage.__file_path) as f
+            with open(FileStorage.__file_path) as f:
                 objdict = json.load(f)
                 for o in objdict.value():
                     cls_name = o["__class__"]
