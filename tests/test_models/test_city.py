@@ -9,6 +9,7 @@ from datetime import datetime
 from time import sleep
 from models.city import City
 
+
 class TestCity_instatiation(unittest.TestCase):
     """
     Unittests for testing instatiation of the city class
@@ -94,6 +95,7 @@ class TestCity_instatiation(unittest.TestCase):
         with self.assertRaises(TypeError):
             City(id=None, created_at=None, updated_at=None)
 
+
 class TestCity_save(unittest.TestCase):
     """
     unittests for testing save method
@@ -146,12 +148,13 @@ class TestCity_save(unittest.TestCase):
         with open("file.json", "r") as f:
             self.assertIn(cyid, f.read())
 
+
 class TestCity_to_dict(unittest.TestCase):
     """
     Unittests for testing to_dict method of the City class
     """
     def test_to_dict_type(self):
-        # It checks if the the return value of the to_dict method is a dictionary.
+        # checks if the the return value of the to_dict method is a dictionary
         self.assertTrue(dict, type(City().to_dict()))
 
     def test_to_dict_contains_correct_keys(self):

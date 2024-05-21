@@ -7,6 +7,7 @@ import unittest
 from datetime import datetime
 from time import sleep
 
+
 class TestUser_instatiation(unittest.TestCase):
     """Unittests for testing instatiation of the User class"""
     def test_no_args_instatiates(self):
@@ -53,7 +54,6 @@ class TestUser_instatiation(unittest.TestCase):
         us2 = User()
         self.assertLess(us1.updated_at, u2.updated_at)
 
-
     def tes_str_representation(self):
         dt = datetime.today()
         dt_repr = repr(dt)
@@ -82,6 +82,7 @@ class TestUser_instatiation(unittest.TestCase):
         with self.assertRaises(TypeError):
             User(id=None, created_at=None, updated_at=None)
 
+
 class TestUser_save(unittest.TestCase):
     """Unittests for testing save method"""
     @classmethod
@@ -90,7 +91,7 @@ class TestUser_save(unittest.TestCase):
             os.rename("file.json", "tmp")
         except IOError:
             pass
-    
+
     def tearDown(self):
         try:
             os.remove("file.json")
@@ -130,6 +131,7 @@ class TestUser_save(unittest.TestCase):
         usid = "User." + us.id
         with open("file.json", "r") as f:
             self.assertIn(usid, f.read())
+
 
 class TestUser_to_dict(unittest.TestCase):
     """Unittests for tsting to_dict method"""
@@ -172,6 +174,6 @@ class TestUser_to_dict(unittest.TestCase):
         with self.assertRaises(TypeError):
             us.to_dict(None)
 
+
 if __name__ == '__main__':
     unittest.main()
-
