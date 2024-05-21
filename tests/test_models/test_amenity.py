@@ -11,6 +11,8 @@ import unittest
 from datetime import datetime
 from time import sleep
 from models.amenity import Amenity
+
+
 class TestAmenity_instatiation(unittest.TestCase):
     """Unittests for testing instatiation of Amenity class"""
     def test_no_args_instatiates(self):
@@ -111,9 +113,10 @@ class TestAmenity_instatiation(unittest.TestCase):
         # import the class to be tested
         # create a class that inherits from unittest.TestCase
         # create a method called test_upper
-        # the self.assertRaises method checks if the result raises a TypeErro           r
+        # self.assertRaises checks if the result raises a TypeError
         with self.assertRaises(TypeError):
             Amenity(id=None, created_at=None, updated_at=None)
+
 
 class TestAmenity_save(unittest.TestCase):
     """Unittests for testing save method of Amenity class"""
@@ -172,6 +175,7 @@ class TestAmenity_save(unittest.TestCase):
         with open("file.json", "r") as f:
             self.assertIn(amid, f.read())
 
+
 class TestAmenity_to_dict(unittest.TestCase):
     """unitests for testing to_dict method"""
     def test_to_dict_type(self):
@@ -223,5 +227,3 @@ class TestAmenity_to_dict(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()i
-
-
