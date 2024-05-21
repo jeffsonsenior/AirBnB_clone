@@ -12,6 +12,7 @@ from model.user import User
 from models import Storage
 from typing import Any
 
+
 class HBNBCommand(cmd.Cmd):
     """
     Command interpreter
@@ -27,7 +28,7 @@ class HBNBCommand(cmd.Cmd):
                  "Place": Place,
                  "Review": Review}
     __cli_kwargs = {}
-        
+    
         def do_quit(self, arg):
         """
         Exit the program
