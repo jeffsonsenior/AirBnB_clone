@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
- Defining unittest for models/engine/file_storage.py.
+"""Defining unittest for models/engine/file_storage.py.
  Unittest classes:
  TestFileStorage_instantiation
  TestFileStorage_methods
@@ -21,12 +20,12 @@ from models.amenity import Amenity
 from models.review import Review
 
 class TestFileStorage_instantiation(unittest.TestCase):
-    """ class of unittest checking instantiation of FileStorage"""
+    """Unittests for testing instantiation of the FileStorage class."""
 
     def test_FileStorage_instantiation_no_args(self):
-        self.assertEqual(type(FileStorage(()), FileStorage)
+        self.assertEqual(type(FileStorage()), FileStorage)
 
-    def test_FileStorage_instantiation_With_arg(self):
+    def test_FileStorage_instantiation_with_arg(self):
         with self.assertRaises(TypeError):
             FileStorage(None)
 
@@ -55,7 +54,7 @@ class TestFileStorage_methods(unittest.TestCase):
             pass
         FileStorage._FileStorage__objects = {}
 
-    def test_all(self)
+    def test_all(self):
         self.assertEqual(dict, type(models.Storage.all()))
 
     def test_all_with_arg(self):
@@ -81,22 +80,22 @@ class TestFileStorage_methods(unittest.TestCase):
         self.assertIn(bm, models.storage.all().value())
         self.assertIn("User." + us.id, models.storage.all().keys())
         self.assertIn(us, models.storage.all().value())
-        self.assertIn("State." + st.id, models.storage.all().keys()
+        self.assertIn("State." + st.id, models.storage.all().keys())
         self.assertIn(st, models.storage.all().values())
         self.assertIn("Place." + pl.id, models.storage.all().keys())
         self.assertIn(pl, models.storage.all().values())
         self.assertIn("City." + cy.id, models.storage.all().keys())
         self.assertIn(cy, models.storage.all().values())
-        self.assertIn("Amenity." + am.id, models.storage.all().keys()
-        self.assertIn(am, models.storage.all().value())
         self.assertIn("Review." + rv.id, models.storage.all().keys())
         self.assertIn(rv, models.storage.all().values())
+        self.assertIn("Amenity." + am.id, models.storage.all().keys())
+        self.assertIn(am, models.storage.all().values())
 
     def test_new_with_args(self):
         with self.assertRaises(AttributeError):
             models.storage.new(BaseModel(), 1)
-
-    def test_new_with_None(self)
+   
+    def test_new_with_None(self):
         with self.assertRaises(AttributeError):
             models.storage.new(None)
 
@@ -128,7 +127,7 @@ class TestFileStorage_methods(unittest.TestCase):
 
     def test_save_with_arg(self):
         with self.assertRaises(TypeError):
-       models.storage.save(None)
+            models.storage.save(None)
 
     def test_reload(self):
         bm = BaseModel()
