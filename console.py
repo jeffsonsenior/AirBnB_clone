@@ -31,6 +31,7 @@ def parse(arg):
         return retl
           
 
+
 class HBNBCommand(cmd.Cmd):
     """
     Command interpreter
@@ -211,4 +212,3 @@ class HBNBCommand(cmd.Cmd):
 
     if __name__ == '__main__':
         HBNBCommand().cmdloop()
-
