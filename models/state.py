@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
-"""
-medel- state
+#!/usr/bin/python3
+"""This medel to creat reviw class- state
 """
 from model.base_model import BaseModel
 

@@ -3,8 +3,7 @@
 Defines the FileStorage class
 """
 import json
-from models.base_model import BaseModel
-from datetime import datetime
+from models.base_model import BaseMode
 from models.user import User
 from models.state import State
 from models.city import City
@@ -23,23 +22,19 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        """
-        Returns the objct dict
+        """Returns the objct dict
         provide access to all stored obj
         """
         return FileStorage.__objects
    
 
     def new(self, obj):
-        """
-        new object set up with with key
-        """
+        """New object set up with with key"""
         ocname = obj.__class__.name
         FileStorage.__objects["{}.{}".format(ocname, obj.id)] = obj
 
     def save(self):
-        """
-        Serializes ojct dict into
+        """Serializes ojct dict into
         Json format and save it to __file_path
         """
         odict = FileStorage.__objects
@@ -48,9 +43,7 @@ class FileStorage:
             json.dump(objdict, f)
 
     def reload(self):
-        """
-        Deserialising the Json file to object
-        """
+        """Deserialising the Json file to object"""
 
         try:
             with open(FileStorage.__file_path) as f:

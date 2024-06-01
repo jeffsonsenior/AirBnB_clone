@@ -1,7 +1,5 @@
-#!usr/bin/env python3
-"""
-model - city
-"""
+#!usr/bin/python3
+"""Model - city"""
 from models.base_model import BaseModel
 
 class City(BaseModel):

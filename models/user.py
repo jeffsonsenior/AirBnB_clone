@@ -1,13 +1,10 @@
-#!/usr/bin/env python3
-"""
-model-user
-"""
+#!/usr/bin/python3
+"""The module to creat the user class"""
 
 from model.base_model import BaseModel
 
 class User(BaseModel):
-    """
-    Different attributes of user
+    """Different attributes of user
     email(str): user email
     password(str):user password
     first_name(str): first name
